@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+  
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+     
+    </div>
+    <div class="col-sm-5 mainContainer">
+
+
+
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+    <h1>Select Your application name </h1><br>
+    
+    <select name="resname"  id="first" data-placeholder="Select to get code..." class="chosen-select" multiple style="width:350px;" tabindex="4">
+
+
+        {% for data in b.name %}
+             
+            <option class="myList" value="{{data}}">{{data}}</option>
+               
+        {% endfor %}
+    </select>  
+    <br /><br /><br />
+        <button class="btn btn-success" type="save">get code</button><br>
+        
+        
+</form>
+
+
+    </div>
+    <div class="col-sm-4">
+      
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.css">
+<script>
+$(document).ready(function(){
+    $(".chosen-select").chosen();
+    
+});
+</script>
+<style>
+ .mainContainer{
+    -webkit-box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.75);
+padding: 10px;
+ }
+
+</style>
